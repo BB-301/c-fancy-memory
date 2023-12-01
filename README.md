@@ -12,7 +12,7 @@ I wrote this library as part of another experimental C library project on which 
 
 ## A quick example
 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -110,7 +110,7 @@ int main(void)
 
 ## Documentation
 
-The library's API is documented using the [Doxygen](https://www.doxygen.nl/index.html) format (see [fancy_memory.h](include/fancy_memory.h)), such that it (the library) will play nicely with IDEs supporting that code documentation format, but, for convenience, this repository also has its own [GitHub-hosted Doxygen website](https://BB-301.github.io/c-fancy-memory/v0.1.0), which should be consulted for a good overview of the library's API.
+The library's API is documented using the [Doxygen](https://www.doxygen.nl/index.html) format (see [fancy_memory.h](include/fancy_memory.h)), such that it (the library) will play nicely with IDEs supporting that code documentation format, but, for convenience, this repository also has its own [GitHub-hosted Doxygen website](https://bb-301.github.io/c-fancy-memory-docs/v0.1.0/html/index.html), which should be consulted for a good overview of the library's API.
 
 If you're interested, you may also clone this repository and generate the website yourself using the `make doxygen` recipe, which, however, assumes that you have [Docker](https://www.docker.com/) (or Docker Desktop) installed and running on your system. If you already have Doxygen installed on your system, you may modify the [Makefile](./Makefile) to use it instead of Docker. But please note that I used Doxygen version `1.9.6` while developing.
 
