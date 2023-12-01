@@ -121,7 +121,7 @@ Finally, you can also have a look at the [examples](./examples) directory for qu
 * [doxygen](./doxygen) — A directory that contains files used to generate the Doxygen documentation website.
   * [Dockerfile](./doxygen/Dockerfile) — A `Dockerfile` that can be used to build an image containing Doxygen, which image can then be run as a container to generate the documentation website for this project.
   * [.dockerignore](./doxygen/.dockerignore) — A `.dockerignore` file used to limit the context used by Docker when building the image.
-  * [Doxyfile](./doxygen/Dockerfile) — The [Doxygen configuration file](https://www.doxygen.nl/manual/config.html) used to generate the documentation website.
+  * [Doxyfile](./doxygen/Doxyfile) — The [Doxygen configuration file](https://www.doxygen.nl/manual/config.html) used to generate the documentation website.
   * [main-page.md](./doxygen/main-page.md) — A markdown file that contains the Doxygen website's main page, which is used when building the website.
   * [libc-tag.xml](./doxygen/libc-tag.xml) — A custom made Doxygen `tagfile`, which corresponds to an XML file containing information about C types not defined by the (this) library, but for which I still wanted to generate hypertext links in the API documentation.
   * [c-keywords-tag.xml](./doxygen/c-keywords-tag.xml) — A custom made Doxygen `tagfile`, which corresponds to an XML file containing information about C types not defined by the (this) library, but for which I still wanted to generate hypertext links in the API documentation.
@@ -163,24 +163,24 @@ At any point, if an internal call to `malloc` or `realloc` fails, the library wi
 This library's API uses a style some might call **C object-based programming**, in which, in order to mimic a class, an abstract data type is declared (in this case [fancy_memory_t](include/fancy_memory.h#L48)) that is used as a container for storing the object's data (note that, by using an abstract data type, the "class members" are made (somewhat) private, as opposed to what would be obtained when both declaring and defining the structure inside the header file). That object is then passed as a pointer to the library's public API functions, which are referred to here as "methods".
 
 For instance, we create the main object like this:
-```
+```c
 fancy_memory_t *memory_tracker = fancy_memory_create();
 ```
 where `fancy_memory_create` corresponds to the "factory method" used to instantiate an object, whose pointer gets stored in the variable named `memory_tracker`. We then use that object to perform operations like the following:
-```
+```c
 char* my_string = fancy_memory_malloc(memory_tracker, sizeof(char) * 10);
 ```
 operation in which we allocate 10 "tracked" bytes and assign the returned pointer to a variable named `my_string`, which is declared as a `char` pointer. The `fancy_memory_malloc` function is referred to here as an "instance method" (or simply a "method"), because it opperates on an object. At any point inside the application's logic, we can check how much memory is being used as follows (i.e., using the `fancy_memory_get_total` method):
-```
+```c
 assert(fancy_memory_get_total(memory_tracker) == 10);
 ```
 Once we are done with using the memory pointed to by `my_string`, we free it as follows:
-```
+```c
 fancy_memory_free(memory_tracker, my_string);
 ```
 where `fancy_memory_free` is another function to which we refer here as an "instance method".
 
-### How to use this library in m own C project?
+### How to use this library in my own C project?
 
 The recommended approach is to use a [Git Submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
@@ -201,7 +201,7 @@ That project is still under development, but I plan on publishing it on GitHub a
   
 ## Contact
 
-If you have any questions, if you find bugs, or if you have suggestions for this project, please feel free to contact me by opening an issue on the [repository](https://github.com/BB-301/c-fancy-memory).
+If you have any questions, if you find bugs, or if you have suggestions for this project, please feel free to contact me by opening an issue on the [repository](https://github.com/BB-301/c-fancy-memory/issues).
 
 ## Licence
 
