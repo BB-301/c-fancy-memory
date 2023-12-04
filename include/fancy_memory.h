@@ -31,6 +31,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <sys/types.h>
 
 /**
  * @brief An opaque data type that is used as a container for storing "memory tracking"

@@ -28,7 +28,7 @@
 #define __FANCY_MEMORY_LIB_VERSION_REVISION__ 0
 
 #define FAIL_AND_TERMINATE(message)                                          \
-    fprintf(stderr, "[%s:%d] ERROR: %s\n", __FUNCTION__, __LINE__, message); \
+    fprintf(stderr, "[%s:%d] ERROR: %s\n", __func__, __LINE__, message); \
     exit(EXIT_FAILURE)
 
 static size_t fancy_memory_private_member_next_index(fancy_memory_t *self);
