@@ -54,6 +54,7 @@ test_run_integration: test_build_integration
 .PHONY: doxygen_build doxygen_build_for_docs_website help
 
 doxygen_build:
+	docker build -f doxygen/Dockerfile -t $(DOCKER_CUSTOM_IMAGE_NAME) .
 	docker run \
     	--rm \
     	-v $(CURRENT_DIRECTORY):/my-dir \
@@ -61,6 +62,7 @@ doxygen_build:
     	$(DOCKER_CUSTOM_IMAGE_NAME) doxygen doxygen/Doxyfile
 
 doxygen_build_for_docs_website:
+	docker build -f doxygen/Dockerfile -t $(DOCKER_CUSTOM_IMAGE_NAME) .
 	docker run \
 		--rm \
 		-v $(CURRENT_DIRECTORY):/my-dir \
