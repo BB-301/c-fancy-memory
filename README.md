@@ -8,7 +8,7 @@
 
 ### Context
 
-I wrote this library as part of another experimental C library project on which I am currently also working. Basically, that other project is making extensive use of dynamic memory allocation, and, while developing that library, I needed a quick and easy way of monitoring memory usage for the purpose of detecting memory leaks, so, instead of looking for an existing, well tested solution (what's the fun in that? LOL), I came up with the current solution, and later decided to publish it as its own standalone library.
+I wrote this library as part of [another experimental C library project](https://github.com/BB-301/c-fancy-string) on which I am currently also working. Basically, that other project is making extensive use of dynamic memory allocation, and, while developing that library, I needed a quick and easy way of monitoring memory usage for the purpose of detecting memory leaks, so, instead of looking for an existing, well tested solution (what's the fun in that? LOL), I came up with the current solution, and later decided to publish it as its own standalone library.
 
 ## A quick example
 
@@ -188,7 +188,7 @@ However, if you are not using Git for your project, the alternative is to copy a
 
 ### What is the other project to which you are referring in the introduction section?
 
-That project is still under development, but I plan on publishing it on GitHub as soon as I have a first version ready. So I'll update this section with more information about it before long.
+The other project's name is [c-fancy-string](https://github.com/BB-301/c-fancy-string), a **C library for easy and fun string manipulation**. Since that library is making extensive use of dynamic memory allocation, I decided to include a built-in way of monitoring memory usage during development, which is how I came up with the current (i.e., `lib<fancy_memory>`) library.
 
 ## Still to do (maybe)...
 
